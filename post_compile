@@ -28,12 +28,7 @@ pip install -q static | indent
 # Needed to serve the application (Procfile)
 pip install -q waitress | indent
 
-if [[ ! -f ${BUILD_DIR}/requirements.txt ]]; then
-  puts-warn "docs/requirements.txt not found, installing Sphinx"
-  pip install -q Sphinx
-else
-  pip install -qr ${BUILD_DIR}/requirements.txt
-fi;
+pip install -q Sphinx | indent
 
 # Get sphinx build-dir
 echo -e "\necho-build-dir:\n\t@echo '\$(BUILDDIR)'\n" >> ${BUILD_DIR}/Makefile
