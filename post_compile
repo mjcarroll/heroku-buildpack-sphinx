@@ -27,8 +27,7 @@ pip install -q static | indent
 
 # Needed to serve the application (Procfile)
 pip install -q waitress | indent
-
-pip install -q Sphinx | indent
+pip install -q doc8 sphinx sphinx-tabs | indent
 
 # Get sphinx build-dir
 echo -e "\necho-build-dir:\n\t@echo '\$(BUILDDIR)'\n" >> ${BUILD_DIR}/Makefile
